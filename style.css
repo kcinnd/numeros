@@ -1,0 +1,47 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Black background */
+}
+
+#container {
+    text-align: center;
+}
+
+#number {
+    font-size: 250px; /* Large size for visibility */
+    font-weight: bold;
+    color: #00FF00; /* Green color */
+    cursor: pointer; /* Indicate the element is clickable */
+    opacity: 0;
+    animation: magicAppearance 5s forwards, pulse 1.5s infinite 5s; /* Add a pulse effect after the initial animation */
+}
+
+@keyframes magicAppearance {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-360deg);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        filter: blur(0);
+        text-shadow: 0 0 20px #00FF00, 0 0 40px #00FF00, 0 0 60px #00FF00; /* Strong green glow */
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 20px #00FF00, 0 0 40px #00FF00, 0 0 60px #00FF00;
+    }
+    50% {
+        transform: scale(1.1);
+        text-shadow: 0 0 30px #00FF00, 0 0 50px #00FF00, 0 0 70px #00FF00;
+    }
+}
